@@ -1,8 +1,12 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav" *ngIf="currentUser">
+        <span class="nav-item nav-link">Hello, {{currentUser.username}}! </span>
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
+    <div class="navbar-nav" *ngIf="!currentUser">
+            <a class="nav-item nav-link" routerLink="/register">Registration</a>
+        </div>
 </nav>
 
 <!-- main app container -->

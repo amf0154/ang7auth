@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment'
-import { User } from '../models/user';
+import { User } from '@core/models/user';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -26,7 +26,6 @@ export class AuthenticationService {
                     sessionStorage.setItem('currentUser', JSON.stringify(user));
                     this.currentUserSubject.next(user);
                 }
-
                 return user;
             }));
     }
